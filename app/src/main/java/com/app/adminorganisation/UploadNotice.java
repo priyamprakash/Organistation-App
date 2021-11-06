@@ -57,6 +57,13 @@ public class UploadNotice extends AppCompatActivity {
         noticeImageView = findViewById(R.id.noticeImageView);
         noticeTitle = findViewById(R.id.noticeTitle);
         uploadNoticeBtn = findViewById(R.id.uploadNoticeBtn);
+        addImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGallery();
+
+            }
+        });
         uploadNoticeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,13 +80,7 @@ public class UploadNotice extends AppCompatActivity {
             }
         });
 
-        addImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openGallery();
 
-            }
-        });
     }
 
     private void uploadImage() {
@@ -154,7 +155,6 @@ public class UploadNotice extends AppCompatActivity {
     private void openGallery() {
         Intent pickImage = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(pickImage, REQ);
-
     }
 
     @Override
