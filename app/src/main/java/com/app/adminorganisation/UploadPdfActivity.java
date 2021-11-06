@@ -1,5 +1,7 @@
 package com.app.adminorganisation;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,7 +47,7 @@ public class UploadPdfActivity extends AppCompatActivity {
     String downloadUrl = "";
     private ProgressDialog pd;
     private TextView pdfTextView;
-    private String pdfName ,title;
+    private String pdfName, title;
 
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
@@ -69,18 +72,17 @@ public class UploadPdfActivity extends AppCompatActivity {
                 openGallery();
             }
         });
+
         uploadPdfBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 title = pdfTitle.getText().toString();
-                if(title.isEmpty()){
+                if (title.isEmpty()) {
                     pdfTitle.setError("Error");
                     pdfTitle.requestFocus();
-                }
-                else if(pdfData == null){
+                } else if (pdfData == null) {
                     Toast.makeText(UploadPdfActivity.this, "Please Upload PDF", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     uploadPdf();
                 }
             }
@@ -95,11 +97,12 @@ public class UploadPdfActivity extends AppCompatActivity {
         reference.putFile(pdfData).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Task<Uri> uriTask  = taskSnapshot.getStorage().getDownloadUrl();
-                while (!uriTask.isComplete()){
-                    Uri uri = uriTask.getResult();
-                    uploadData(String.valueOf(uri));
-                }
+                Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
+                while (!uriTask.isComplete()) ;
+
+                Uri uri = uriTask.getResult();
+                uploadData(String.valueOf(uri));
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -149,7 +152,7 @@ public class UploadPdfActivity extends AppCompatActivity {
 
                 try {
                     cursor = UploadPdfActivity.this.getContentResolver().query(pdfData, null, null, null, null);
-                    if(cursor != null && cursor.moveToFirst()){
+                    if (cursor != null && cursor.moveToFirst()) {
                         pdfName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
                     }
                 } catch (Exception e) {
