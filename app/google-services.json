@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "141989368606",
+    "project_id": "organisation-app-3d8a5",
+    "storage_bucket": "organisation-app-3d8a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141989368606:android:099e8a850df2bd293d2f0f",
+        "android_client_info": {
+          "package_name": "com.app.adminorganisation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141989368606-bu09p2p5n99dot5i55lnl0jrrftc326i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwPohRQOSL4D6crKjzUaM2D3o8K-iitUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141989368606-bu09p2p5n99dot5i55lnl0jrrftc326i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
