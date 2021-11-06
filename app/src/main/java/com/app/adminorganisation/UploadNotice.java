@@ -65,7 +65,7 @@ public class UploadNotice extends AppCompatActivity {
                     noticeTitle.requestFocus();
                 }
                 else  if(bitmap == null){
-                    uploadData();
+                    uploadData(downloadUrl);
                 }
                 else {
                     uploadImage();
@@ -104,7 +104,7 @@ public class UploadNotice extends AppCompatActivity {
                                 @Override
                                 public void onSuccess(Uri uri) {
                                     downloadUrl = String.valueOf(uri);
-
+                                    uploadData(downloadUrl);
                                 }
                             });
                         }
@@ -118,7 +118,7 @@ public class UploadNotice extends AppCompatActivity {
         });
     }
 
-    private void uploadData() {
+    private void uploadData(String downloadUrl) {
         reference = reference.child("Notice");
         final String  uniqueKey = reference.push().getKey();
 
@@ -132,7 +132,7 @@ public class UploadNotice extends AppCompatActivity {
         SimpleDateFormat currentTime = new SimpleDateFormat("hh:mm a");
         String time  = currentTime.format(calForTime.getTime());
 
-        NoticeData noticeData = new NoticeData(time , downloadUrl , date , time , uniqueKey);
+        NoticeData noticeData = new NoticeData(title , downloadUrl , date , time , uniqueKey);
         reference.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
