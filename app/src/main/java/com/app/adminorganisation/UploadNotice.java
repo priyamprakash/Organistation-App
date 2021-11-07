@@ -43,13 +43,14 @@ public class UploadNotice extends AppCompatActivity {
     String downloadUrl = "";
     private ProgressDialog pd;
 
-    private DatabaseReference reference  ;
+    private DatabaseReference reference ,dbRef ;
     private StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_notice);
+
         reference = FirebaseDatabase.getInstance().getReference();
         storageReference = FirebaseStorage.getInstance().getReference();
         pd = new ProgressDialog(this);
@@ -94,7 +95,7 @@ public class UploadNotice extends AppCompatActivity {
         final StorageReference filePath;
         filePath = storageReference.child("Notice").child(finalimg + "jpg");
         final UploadTask uploadTask = filePath.putBytes(finalimg);
-        uploadTask.addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+        uploadTask.addOnCompleteListener(UploadNotice.this,new OnCompleteListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
                 if(task.isSuccessful()){
@@ -120,8 +121,8 @@ public class UploadNotice extends AppCompatActivity {
     }
 
     private void uploadData() {
-        reference = reference.child("Notice");
-        final String  uniqueKey = reference.push().getKey();
+        dbRef = reference.child("Notice");
+        final String  uniqueKey = dbRef.push().getKey();
 
         String title = noticeTitle.getText().toString();
 
@@ -134,7 +135,7 @@ public class UploadNotice extends AppCompatActivity {
         String time  = currentTime.format(calForTime.getTime());
 
         NoticeData noticeData = new NoticeData(title , downloadUrl , date , time , uniqueKey);
-        reference.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
+        dbRef.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 pd.dismiss();
