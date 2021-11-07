@@ -11,6 +11,9 @@ public class TeacherData {
         this.key = key;
     }
 
+    public TeacherData() {
+    }
+
     public String getName() {
         return name;
     }

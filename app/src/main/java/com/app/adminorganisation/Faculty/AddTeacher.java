@@ -57,7 +57,7 @@ public class AddTeacher extends AppCompatActivity {
         setContentView(R.layout.activity_add_teacher);
         addTeacherImage = findViewById(R.id.addTeacherImage);
         addTeacherName = findViewById(R.id.addTeacherName);
-        addTeacherImage = findViewById(R.id.addTeacherImage);
+        addTeacherEmail = findViewById(R.id.addTeacherEmail);
         addTeacherPost = findViewById(R.id.addTeacherPost);
         addTeacherCategroy = findViewById(R.id.addTeacherCategory);
         addTeacherBtn = findViewById(R.id.addTeacherBtn);
@@ -66,7 +66,7 @@ public class AddTeacher extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference().child("teacher");
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        String[] items = new String[]{"Select Department", "Mechanical", "Civil", "Electrical", "ECE", "Information Technology", "Leather Technology", "Humanities", "B.Pharma", "Other"};
+        String[] items = new String[]{"Select Department", "Mechanical", "Civil", "Electrical", "ECE", "Information Technology", "Leather Technology"};
         addTeacherCategroy.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items));
         addTeacherCategroy.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

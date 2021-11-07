@@ -11,6 +11,9 @@ public class NoticeData {
         this.key = key;
     }
 
+    public NoticeData() {
+    }
+
     public String getTitle() {
         return title;
     }
