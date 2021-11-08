@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+//    onNavigationItemSelected
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
