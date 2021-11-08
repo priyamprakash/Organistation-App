@@ -179,7 +179,22 @@ public class UpdateTeacherActivity extends AppCompatActivity {
     }
 
     private void deleteData() {
+        reference.child(category).child(uniqueKey).removeValue()
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Toast.makeText(UpdateTeacherActivity.this, "Teacher Updated in : " + category, Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UpdateTeacherActivity.this, UpdateFaculty.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
 
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(UpdateTeacherActivity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
