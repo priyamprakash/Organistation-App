@@ -116,7 +116,7 @@ public class UpdateTeacherActivity extends AppCompatActivity {
             updateTeacherPost.setError("Empty");
             updateTeacherPost.requestFocus();
         } else if (bitmap == null) {
-            updateData("");
+            updateData(image);
         } else {
             uploadImage();
         }
