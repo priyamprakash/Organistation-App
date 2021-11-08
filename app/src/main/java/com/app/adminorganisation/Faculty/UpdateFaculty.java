@@ -89,7 +89,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     mechanicalDepartment.setHasFixedSize(true);
                     mechanicalDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list1);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list1 , "Mechanical" );
                     mechanicalDepartment.setAdapter(adapter);
 
                 }
@@ -121,7 +121,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     civilDepartment.setHasFixedSize(true);
                     civilDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list2);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list2 , "Civil");
                     civilDepartment.setAdapter(adapter);
 
                 }
@@ -153,7 +153,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     electricalDepartment.setHasFixedSize(true);
                     electricalDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list3);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list3 , "Electrical");
                     electricalDepartment.setAdapter(adapter);
 
                 }
@@ -185,7 +185,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     ecDepartment.setHasFixedSize(true);
                     ecDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list4);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list4 , "ECE");
                     ecDepartment.setAdapter(adapter);
 
                 }
@@ -217,7 +217,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     itDepartment.setHasFixedSize(true);
                     itDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list5);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list5 , "Information Technology");
                     itDepartment.setAdapter(adapter);
 
                 }
@@ -249,7 +249,7 @@ public class UpdateFaculty extends AppCompatActivity {
                     }
                     leatherDepartment.setHasFixedSize(true);
                     leatherDepartment.setLayoutManager(new LinearLayoutManager(UpdateFaculty.this));
-                    adapter = new TeacherAdapter(UpdateFaculty.this , list6);
+                    adapter = new TeacherAdapter(UpdateFaculty.this , list6 , "Leather Technology");
                     leatherDepartment.setAdapter(adapter);
 
                 }

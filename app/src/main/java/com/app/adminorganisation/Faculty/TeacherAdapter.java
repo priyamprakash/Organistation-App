@@ -1,13 +1,13 @@
 package com.app.adminorganisation.Faculty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,18 +19,20 @@ import java.util.List;
 
 public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherViewAdapter> {
 
-    private  Context context;
+    private Context context;
     private List<TeacherData> list;
+    private  String category;
 
-    public TeacherAdapter(Context context, List<TeacherData> list) {
+    public TeacherAdapter(Context context, List<TeacherData> list, String category) {
         this.context = context;
         this.list = list;
+        this.category = category;
     }
 
     @NonNull
     @Override
     public TeacherViewAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view  = LayoutInflater.from(context).inflate(R.layout.faculty_item_layout , parent , false);
+        View view = LayoutInflater.from(context).inflate(R.layout.faculty_item_layout, parent, false);
         return new TeacherViewAdapter(view);
     }
 
@@ -49,7 +51,14 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
         holder.update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Update Teacher", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, UpdateTeacherActivity.class);
+                intent.putExtra("name", item.getName());
+                intent.putExtra("email", item.getEmail());
+                intent.putExtra("post", item.getPost());
+                intent.putExtra("image", item.getImage());
+                intent.putExtra("key",item.getKey());
+                intent.putExtra("category" , category);
+                context.startActivity(intent);
             }
         });
 
@@ -61,9 +70,10 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.TeacherV
     }
 
     public class TeacherViewAdapter extends RecyclerView.ViewHolder {
-        private TextView name , email , post;
+        private TextView name, email, post;
         private Button update;
         private ImageView imageView;
+
         public TeacherViewAdapter(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.teacherName);
