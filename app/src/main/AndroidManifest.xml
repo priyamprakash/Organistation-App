@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdminOrganisation">
         <activity
+            android:name=".Notice.DeleteNoticeActivity"
+            android:exported="false" />
+        <activity
             android:name=".Faculty.UpdateTeacherActivity"
             android:exported="false" />
         <activity
@@ -28,7 +31,7 @@
             android:name=".UploadImage"
             android:exported="false" />
         <activity
-            android:name=".UploadNotice"
+            android:name=".Notice.UploadNotice"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

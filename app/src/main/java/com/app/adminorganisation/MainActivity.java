@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.app.adminorganisation.Faculty.UpdateFaculty;
+import com.app.adminorganisation.Notice.UploadNotice;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     CardView uploadNotice, addGalleryImage, addEbook, faculty;
