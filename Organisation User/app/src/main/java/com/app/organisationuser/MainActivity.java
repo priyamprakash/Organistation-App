@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Toast.makeText(MainActivity.this, "Developer", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.navigation_video:
-                Toast.makeText(MainActivity.this, "Video", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Video Lectures", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.navigation_rate:
                 Toast.makeText(MainActivity.this, "Rate", Toast.LENGTH_SHORT).show();
