@@ -11,7 +11,7 @@
         android:title="Notice" />
     <item
         android:id="@+id/navigation_faculty"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_faculty"
         android:title="Faculty" />
     <item
         android:id="@+id/navigation_gallery"
