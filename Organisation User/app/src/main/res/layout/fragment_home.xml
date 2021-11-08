@@ -3,12 +3,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/card"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="10dp"
+        android:elevation="12dp"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@color/textColor"
+            android:scaleType="fitXY"
+            />
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/poppins"
+            android:text="Description"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/title_size" />
+
+        <me.biubiubiu.justifytext.library.JustifyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="36dp"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/poppins"
+            android:text="Lorem ipsum dolor sit amet. Et cupiditate deserunt in eligendi beatae ut odio corrupti qui commodi labore 33 velit rerum. Ut excepturi pariatur et quis totam in totam quia aut dolor reprehenderit quo dolore eaque qui galisum alias quo consequatur modi? Et aperiam aliquam ut porro similique eum consectetur consequatur id voluptas odio quo recusandae inventore qui illo nobis qui culpa provident. Non earum soluta ea internos illo sed similique commod.\n"
+            android:textColor="@color/textColor"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+</ScrollView>
 
 </FrameLayout>
