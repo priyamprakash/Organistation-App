@@ -10,6 +10,7 @@ import android.view.View;
 import com.app.adminorganisation.Faculty.UpdateFaculty;
 import com.app.adminorganisation.Notice.DeleteNoticeActivity;
 import com.app.adminorganisation.Notice.UploadNotice;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     CardView uploadNotice, addGalleryImage, addEbook, faculty , deleteNotice;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addEbook = findViewById(R.id.addEbook);
         faculty = findViewById(R.id.faculty);
         deleteNotice = findViewById(R.id.deleteNotice);
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);//experiment
 
         uploadNotice.setOnClickListener(this);
         addGalleryImage.setOnClickListener(this);

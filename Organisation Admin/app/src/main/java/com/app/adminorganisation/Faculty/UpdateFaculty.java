@@ -261,7 +261,4 @@ public class UpdateFaculty extends AppCompatActivity {
             }
         });
     }
-
-
-
 }
