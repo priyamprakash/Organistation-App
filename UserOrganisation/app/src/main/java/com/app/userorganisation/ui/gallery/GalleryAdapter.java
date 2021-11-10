@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.userorganisation.R;
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +34,8 @@ public class GalleryAdapter  extends RecyclerView.Adapter<GalleryAdapter.Gallery
 
     @Override
     public void onBindViewHolder(@NonNull GalleryViewAdapter holder, int position) {
-        Glide.with(context).load(images.get(position)).in
+        Glide.with(context).load(images.get(position)).into(holder.imageView);
+
     }
 
     @Override
