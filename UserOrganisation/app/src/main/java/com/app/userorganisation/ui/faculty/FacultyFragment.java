@@ -57,6 +57,7 @@ public class FacultyFragment extends Fragment {
         ecDepartment();
         itDepartment();
         leatherDepartment();
+
         return  view;
     }
     private void mechanicalDepartment() {
