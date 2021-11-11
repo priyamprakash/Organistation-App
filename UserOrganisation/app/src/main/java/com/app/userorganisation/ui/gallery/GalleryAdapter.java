@@ -34,7 +34,7 @@ public class GalleryAdapter  extends RecyclerView.Adapter<GalleryAdapter.Gallery
 
     @Override
     public void onBindViewHolder(@NonNull GalleryViewAdapter holder, int position) {
-        Glide.with(context).load(images.get(position)).into(holder.imageView);
+        Glide.with(context).load(images.get(position)).placeholder(R.drawable.avatar_profile).into(holder.imageView);
 
     }
 
