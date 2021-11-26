@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/text_margin"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/branch_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/text_margin"
+                android:src="@drawable/ic_label" />
+
+            <TextView
+                android:id="@+id/branch_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/text_margin"
+                android:fontFamily="@font/poppins"
+                android:text="Computer Science"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/title_size" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/branch_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:layout_marginTop="36dp"
+            android:fontFamily="@font/poppins"
+            android:text="Lorem ipsum dolor sit amet. Et cupiditate deserunt in eligendi beatae ut odio corrupti qui commodi labore 33 velit rerum. Ut excepturi pariatur et quis totam in totam quia aut dolor reprehenderit quo dolore eaque qui galisum alias quo consequatur modi? Et aperiam aliquam ut porro similique eum consectetur consequatur id voluptas odio quo recusandae inventore qui illo nobis qui culpa provident. Non earum soluta ea internos illo sed similique commod.\n"
+            android:textColor="@color/textColor"
+            android:textSize="12dp" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
