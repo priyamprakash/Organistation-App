@@ -51,8 +51,7 @@ public class BranchAdapter extends PagerAdapter {
         container.addView(view , 0);
         return view;
     }
-//Just a comment
-    
+
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View) object);
