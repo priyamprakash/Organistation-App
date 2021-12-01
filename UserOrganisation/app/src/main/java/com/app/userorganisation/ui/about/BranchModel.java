@@ -13,6 +13,8 @@ public class BranchModel {
     public int getImg() {
         return img;
     }
+//COMMENTED THE CODE
+
 
     public void setImg(int img) {
         this.img = img;
