@@ -6,17 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-<TextView
-    android:layout_marginTop="50dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Admin Dashboard"
-    android:textAlignment="center"
-    android:textSize="22sp"
-    android:textColor="@color/black"
-    android:fontFamily="@font/poppins_regular"
 
-    />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/admin_dashboard"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,9 +31,9 @@
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            app:cardCornerRadius="12dp"
+            android:elevation="10dp"
 
-            android:elevation="10dp">
+            app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,7 +60,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="5dp"
-                    android:text="Upload Notice"
+                    android:text="@string/upload_notice"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -70,9 +72,9 @@
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            app:cardCornerRadius="12dp"
+            android:elevation="10dp"
 
-            android:elevation="10dp">
+            app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,7 +101,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="5dp"
-                    android:text="Upload Image"
+                    android:text="@string/upload_image"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -118,9 +120,9 @@
             android:id="@+id/addEbook"
             android:layout_width="130dp"
             android:layout_height="150dp"
-            app:cardCornerRadius="12dp"
+            android:layout_margin="10dp"
 
-            android:layout_margin="10dp">
+            app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -150,7 +152,7 @@
                     android:fontFamily="@font/poppins_regular"
                     android:padding="5dp"
 
-                    android:text="Upload Ebook"
+                    android:text="@string/upload_ebook"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -192,7 +194,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="5dp"
-                    android:text="Update Faculty"
+                    android:text="@string/update_faculty"
 
                     android:textStyle="bold" />
 
@@ -213,9 +215,9 @@
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            app:cardCornerRadius="12dp"
+            android:elevation="10dp"
 
-            android:elevation="10dp">
+            app:cardCornerRadius="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -242,7 +244,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="5dp"
-                    android:text="Delete Notice"
+                    android:text="@string/delete_notice"
                     android:textStyle="bold" />
 
             </LinearLayout>
